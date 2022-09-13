@@ -1,6 +1,7 @@
 import { Login } from "@/api/interface/index";
-import { PORT1, PORT3 } from "@/api/config/servicePort";
+import { PORT3 } from "@/api/config/servicePort";
 import Menu from "@/assets/json/life-hope-menu.json";
+import AuthButton from "@/assets/json/auth-button.json";
 import qs from "qs";
 
 import http from "@/api";
@@ -18,7 +19,8 @@ export const loginApi = (params: Login.ReqLoginForm) => {
 
 // * 获取按钮权限
 export const getAuthButtons = () => {
-	return http.get<Login.ResAuthButtons>(PORT1 + `/auth/buttons`);
+	// return http.get<Login.ResAuthButtons>(PORT1 + `/auth/buttons`);
+	return AuthButton;
 };
 
 // * 获取菜单列表
