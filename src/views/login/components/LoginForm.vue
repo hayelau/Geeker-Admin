@@ -70,7 +70,6 @@ const login = (formEl: FormInstance | undefined) => {
 			const res = await loginApi(requestLoginForm);
 			console.log(res);
 			if (res.code == 1000) {
-				debugger;
 				// * 存储 token
 				globalStore.setToken(res.data!.toString());
 				// * 登录成功之后清除上个账号的 menulist 和 tabs 数据
@@ -80,7 +79,6 @@ const login = (formEl: FormInstance | undefined) => {
 				ElMessage.success("登录成功！");
 				router.push({ name: "home" });
 			} else {
-				console.log(1234);
 				ElMessage.error(res.message);
 			}
 		} finally {
